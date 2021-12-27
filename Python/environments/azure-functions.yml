@@ -1,0 +1,28 @@
+name: azure-functions
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  # Programming language
+  - python
+  # Interactive jupyter environment
+  - jupyter
+  - jupyter_contrib_nbextensions
+  - jupyter-resource-usage
+  # Basic data processing
+  - pandas
+  # Database I/O
+  - pyodbc
+  # Azure SDK
+  - pip
+  - pip:
+    # Azure -- Install all via pip to ensure the latest version
+    - adal # LEGACY: Active Directory Authentication Library
+    - msal # Microsoft Authentication Library (replaces ADAL)
+    - azure-common # Microsoft Azure client libraries for python (common)
+    - azure-storage-blob # Microsoft Azure Blob Storage Client Library for python
+    - azure-cosmos # CosmosDB Client Library
+    - azure-identity # Azure identity management
+    - azure-graphrbac # Graph RBAC Client Library
+    - azure-functions # Azure functions capabilities
+    - azure-cosmosdb-table # Azure CosmosDB Table Client

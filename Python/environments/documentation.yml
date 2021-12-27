@@ -1,0 +1,18 @@
+################################################################################
+# The documentation environment collects all packages that are used to automate
+# documentation.
+################################################################################
+name: documentation
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  # Programming language
+  - python
+  # documentation packages
+  - mkdocs # Automatic static site generation from markdowns
+  - mkdocs-material # A cleaner mkdocs theme (third party)
+  - sphinx # Automatic documentation generation for python projects
+  - pip
+  - pip:
+    - mkdocs-pdf-export-plugin # Allows you to export mkdocs to a pdf page

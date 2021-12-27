@@ -1,0 +1,18 @@
+name: operations-research
+channels:
+  - anaconda
+  - conda-forge
+  - mutirri
+dependencies:
+  # Programming language
+  - python
+  # Interactive jupyter environment
+  - jupyter
+  # Data processing
+  - numpy # Optimization of vector/matrix calculations
+  - pandas # Introduction of the Pandas Dataframe
+  # Data visualization
+  - matplotlib # Basic data visualization engine for python
+  - seaborn # Statistical visualization engine for python
+  # Machine Learning
+  - simpy # Discrete event simulation

@@ -1,0 +1,6 @@
+jupyter notebooks: conda install jupyter
+nbcontributions: conda install -c conda-forge jupyter_contrib_nbextensions
+  - Also required to install the contrib extensions in jupyter itself: jupyter contrib nbextension install --system
+Memory usage: conda install -c conda-forge jupyter-resource-usage
+  - By default only memory usage is shown
+  - CPU usage is enabled by: jupyter notebook --ResourceUseDisplay.track_cpu_percent=True

@@ -1,0 +1,46 @@
+################################################################################
+# The EDA environment is the primary environment that is used to evaluate
+# possible value cases.
+################################################################################
+name: data-analysis
+channels:
+  - anaconda
+  - conda-forge
+  - r  # Collection of r packages: CRAN
+dependencies:
+  # Programming language
+  - python
+  - r # The r language (used mainly for EDA)
+  # Optionally: Add R and packages to this environment OR create a secondary R environment
+  # Interactive jupyter environment
+  - jupyter
+  - jupyter_contrib_nbextensions
+  - jupyter-resource-usage
+  # Data I/O
+  # - pickle  # Pickled data (python-specific binary format)
+  - h5py  # HDF5 format (numerical data only)
+  - feather-format  # Allows for feature format (cross compatible between R and python)
+  - pyarrow  # Apache Arrow (Allows for Parquet format)
+  - xlrd  # Excel .xlsx support in Pandas
+  - openpyxl  # Edit and write *.xlsx files from python
+  - sqlalchemy # SQL connector for python
+  - psycopg2  # PostgreSQL adapter for python
+  # Data processing
+  - r-base  # The basic r packages
+  - r-essentials  # The basic suite of R packages
+  - numpy # Optimization of vector/matrix calculations
+  - pandas # Introduction of the Pandas Dataframe
+  # Exploratory Data Analysis (EDA)
+  - r-naniar  # A R package for studying missing and null values
+  - pandas-profiling  # Adds profile_report for quick data assessment
+  # Data modeling
+  - scipy  # Numerical mathematics
+  - statsmodels  # Fit statistical models and perform statistical tests
+  - scikit-learn  # Basic Machine Learning methods -- Preliminary modeling
+  # Data visualization
+  - matplotlib # Basic data visualization engine for python
+  - seaborn # Statistical visualization engine for python
+  - plotly # Interactive visualization engine for python
+  - cufflinks-py  # Binds the power fo plotly with the flexibility of pandas
+  - r-plotly  # The plotly API for R
+  - r-heatmaply  # Interactive cluster heatmaps using R

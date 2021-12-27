@@ -1,0 +1,19 @@
+name: big-data
+channels:
+  - conda-forge
+dependencies:
+  # Programming language
+  - python
+  # Interactive jupyter environment
+  - jupyter
+  - jupyter_contrib_nbextensions
+  - jupyter-resource-usage
+  # Data I/O 
+  - pyarrow  # Apache Arrow (Allows for Parquet format)
+  # Data processing
+  - numpy # Optimization of vector/matrix calculations
+  - pandas # Introduction of the Pandas Dataframe
+  # Big data
+  - findspark # Finds an active spark cluster running on the local machine
+  - pyspark # Python API to work with Spark
+  

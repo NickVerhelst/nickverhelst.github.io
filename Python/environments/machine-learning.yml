@@ -1,0 +1,35 @@
+name: machine-learning
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  # Programming language
+  - python
+  # Interactive jupyter environment
+  - jupyter
+  # Data I/O
+  - pyarrow  # Apache Arrow (Allows for Parquet format)
+  - sqlalchemy # Basic SQL connector
+  - psycopg2  # PostgreSQL adapter for python
+  # Data processing
+  - numpy # Optimization of vector/matrix calculations
+  - pandas # Introduction of the Pandas Dataframe
+  # Data visualization
+  - matplotlib # Basic data visualization engine for python
+  - seaborn # Statistical visualization engine for python
+  # Feature Engineering
+  - scipy # Library for scientific calculations (e.g. Fourier Transforms)
+  - featuretools # Automated feature engineering
+  # Machine Learning
+  - scikit-learn # Basic Machine Learning and Data Mining
+  - sklearn-json # Sharing and deployment of scikit-learn models
+  # Advanced stuff: Move to dedicated environment!
+  # - scikit-image  # Advanced image processing
+  # - tensorflow  # Basic framework for building Neural Networks (NN)
+  # - keras  # Neural Network tools: Wrapper for TensorFlow
+  # - nltk  # Natural Language ToolKit (NLTK): The original NLP toolkit for python
+  # - spacy  # An object-oriented NLP toolkit
+# To add:
+  # - Hyperparamter optimization (AutoML packages)
+  # - Reinforcement learning packages
+  

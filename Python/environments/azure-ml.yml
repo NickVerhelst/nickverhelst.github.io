@@ -1,0 +1,24 @@
+name: azure-ml
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  # Programming language
+  - python
+  # Interactive jupyter environment
+  - jupyter
+  - jupyter_contrib_nbextensions
+  - jupyter-resource-usage
+  # Azure SDK
+  - adal # LEGACY: Active Directory Authentication Library
+  - msal # Microsoft Authentication Library (replaces ADAL)
+  - azure # Microsoft Azure client libraries for python
+  - azure-common # Microsoft Azure client libraries for python (common)
+  - azure-storage-blob # Microsoft Azure Blob Storage Client Library for python
+  - azure-cosmos # CosmosDB Client Library
+  - azure-identity # Azure identity management
+  - azure-graphrbac # Graph RBAC Client Library
+  - pip:
+    # Azure -- Install all via pip to ensure the latest version
+    - azure-functions # Azure functions capabilities
+    - azure-cosmosdb-table # Azure CosmosDB Table Client

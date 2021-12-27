@@ -1,0 +1,22 @@
+name: automation
+channels:
+  - anaconda
+  - conda-forge
+dependencies:
+  # Programming language
+  - python
+  # Basic automation
+  - requests # API Calls
+  - apscheduler # Task scheduling with Cron-like capabilities
+  - watchdog # File system events monitoring
+  # Data processing
+  - csvkit # Working with csv files
+  # Web scraping
+  - selenium # Automating web browser interaction
+  - beautifulsoup4 # Reading data from HTML/XML files
+  - scrapy # Screen scraping framework
+  # Messaging
+  - twilio # Send automated texts/mails 
+  - pip
+  - pip:
+    - random_user_agent # Generates random agents for scraping

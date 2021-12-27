@@ -1,0 +1,2 @@
+1. Open the terminal in this file location
+2. Run the command "conda env create -f <environment>.yml"
