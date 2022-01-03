@@ -17,7 +17,7 @@
     
     
       
-        <title>Solution development practices - Nick's Software Dev Docs</title>
+        <title>Quality Assurance - Nick's Software Dev Docs</title>
       
     
     
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#quality-assurance" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -94,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Solution development practices
+              Quality Assurance
             
           </span>
         </div>
@@ -216,13 +221,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Python/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Python
       </a>
     </li>
@@ -264,15 +271,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Theory/" class="md-tabs__link">
         Theory
       </a>
     </li>
@@ -422,12 +427,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -450,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Python
       </a>
     </li>
@@ -464,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/cli-tooling/" class="md-nav__link">
+      <a href="../cli-tooling/" class="md-nav__link">
         Command Line Interface
       </a>
     </li>
@@ -478,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/config-management/" class="md-nav__link">
+      <a href="../config-management/" class="md-nav__link">
         Config management
       </a>
     </li>
@@ -492,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/documentation/" class="md-nav__link">
+      <a href="../documentation/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -506,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/environments/" class="md-nav__link">
+      <a href="../environments/" class="md-nav__link">
         Environments
       </a>
     </li>
@@ -520,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/packages-in-python/" class="md-nav__link">
+      <a href="../packages-in-python/" class="md-nav__link">
         Packages in python
       </a>
     </li>
@@ -534,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/packaging-projects/" class="md-nav__link">
+      <a href="../packaging-projects/" class="md-nav__link">
         Packaging projects
       </a>
     </li>
@@ -546,11 +553,99 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Python/type-hinting/" class="md-nav__link">
-        Type hinting in python
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Quality Assurance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Quality Assurance
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#automated-testing-tools" class="md-nav__link">
+    Automated testing tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated testing tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linting" class="md-nav__link">
+    Linting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    Unit testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-testing-tools" class="md-nav__link">
+    Manual testing tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual testing tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-testing" class="md-nav__link">
+    Load testing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-testing" class="md-nav__link">
+    Visual testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -562,8 +657,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/unit-testing/" class="md-nav__link">
-        Unit testing
+      <a href="../type-hinting/" class="md-nav__link">
+        Type hinting in python
       </a>
     </li>
   
@@ -734,14 +829,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
@@ -764,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../Theory/" class="md-nav__link">
         Theory
       </a>
     </li>
@@ -778,7 +871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../big-data/" class="md-nav__link">
+      <a href="../../Theory/big-data/" class="md-nav__link">
         Big Data
       </a>
     </li>
@@ -792,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coding-principles/" class="md-nav__link">
+      <a href="../../Theory/coding-principles/" class="md-nav__link">
         Coding Principles
       </a>
     </li>
@@ -806,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-landscape-governance/" class="md-nav__link">
+      <a href="../../Theory/data-landscape-governance/" class="md-nav__link">
         Roles in the data landscape
       </a>
     </li>
@@ -820,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-landscape-technology/" class="md-nav__link">
+      <a href="../../Theory/data-landscape-technology/" class="md-nav__link">
         Technologies
       </a>
     </li>
@@ -834,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-quality/" class="md-nav__link">
+      <a href="../../Theory/data-quality/" class="md-nav__link">
         Data Quality
       </a>
     </li>
@@ -848,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-science/" class="md-nav__link">
+      <a href="../../Theory/data-science/" class="md-nav__link">
         Building baseline models
       </a>
     </li>
@@ -862,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deployment-strategies/" class="md-nav__link">
+      <a href="../../Theory/deployment-strategies/" class="md-nav__link">
         Deployment Strategies
       </a>
     </li>
@@ -876,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learning-and-certification/" class="md-nav__link">
+      <a href="../../Theory/learning-and-certification/" class="md-nav__link">
         Learning and Certification
       </a>
     </li>
@@ -890,7 +983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../naming-conventions/" class="md-nav__link">
+      <a href="../../Theory/naming-conventions/" class="md-nav__link">
         Naming conventions
       </a>
     </li>
@@ -904,7 +997,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../software-engineering/" class="md-nav__link">
+      <a href="../../Theory/quality-assurance/" class="md-nav__link">
+        Quality Assurance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Theory/software-engineering/" class="md-nav__link">
         Software engineering
       </a>
     </li>
@@ -916,32 +1023,10 @@
               
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Solution development practices
-      </a>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
   
     <li class="md-nav__item">
-      <a href="../testing/" class="md-nav__link">
-        Testing
+      <a href="../../Theory/solution-development/" class="md-nav__link">
+        Solution Development
       </a>
     </li>
   
@@ -954,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows-subsystem-for-linux/" class="md-nav__link">
+      <a href="../../Theory/windows-subsystem-for-linux/" class="md-nav__link">
         Windows Subsystem for Linux
       </a>
     </li>
@@ -1135,23 +1220,113 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#automated-testing-tools" class="md-nav__link">
+    Automated testing tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated testing tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linting" class="md-nav__link">
+    Linting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    Unit testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-testing-tools" class="md-nav__link">
+    Manual testing tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual testing tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-testing" class="md-nav__link">
+    Load testing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-testing" class="md-nav__link">
+    Visual testing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/NickVerhelst/code-snippets/edit/master/docs/Theory/solution-development-practices.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/NickVerhelst/code-snippets/edit/master/docs/Python/quality-assurance.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-  <h1>Solution development practices</h1>
-
-<p>Developing a solution happens in four phases:
-1. Pilot/PoC: A 2-3 people work on it. Main stakeholders aware. See if solution works. The main goal of this phase is to ensure key functionalities can be met and the right stakeholders are aware of the project. End result is buy-in from management and feasibility check.
-2. Minimal Viable Product (MVP): A first release for a broader audience.
-3. pre production
-4. production</p>
+<h1 id="quality-assurance">Quality Assurance</h1>
+<p>Here we follow the hierarchy of the theory section on QA.</p>
+<h2 id="automated-testing-tools">Automated testing tools</h2>
+<h3 id="linting">Linting</h3>
+<p>Calling a linter is easy as these are just python modules: <code>python3 -m pip install flake8</code> will for example install the <code>flake8</code> module. The linter can then be used by calling</p>
+<p>TODO: Also add part on pylint and make a toggle to choose.</p>
+<h3 id="unit-testing">Unit testing</h3>
+<p>pytest and pytest-cov are two packages to use for this
+TODO: Add code examples in python.</p>
+<h2 id="manual-testing-tools">Manual testing tools</h2>
+<h3 id="load-testing">Load testing</h3>
+<p>Popular load-testing packages for python are:
+- molotov
+- locust.io
+- loader.io</p>
+<h3 id="visual-testing">Visual testing</h3>
+<p>TODO: Add packages to test graphs.</p>
 
               
             </article>
@@ -1170,7 +1345,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../software-engineering/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software engineering" rel="prev">
+        <a href="../packaging-projects/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Packaging projects" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1179,20 +1354,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Software engineering
+              Packaging projects
             </div>
           </div>
         </a>
       
       
         
-        <a href="../testing/" class="md-footer__link md-footer__link--next" aria-label="Next: Testing" rel="next">
+        <a href="../type-hinting/" class="md-footer__link md-footer__link--next" aria-label="Next: Type hinting in python" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Testing
+              Type hinting in python
             </div>
           </div>
           <div class="md-footer__button md-icon">
