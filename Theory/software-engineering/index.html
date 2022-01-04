@@ -970,6 +970,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-makefile" class="md-nav__link">
+    The makefile
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1213,6 +1220,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-makefile" class="md-nav__link">
+    The makefile
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1246,6 +1260,33 @@
 <h2 id="dependency-management">Dependency management</h2>
 <p>When developing software, always make sure that you have the correct environment set up. A part of this is nowadays fixed by working with Docker containers. But there is also an important part in getting the correct package versions.</p>
 <p>With python you can write away your environment using the <code>pip freeze</code> command, which will list all dependencies.</p>
+<h2 id="the-makefile">The makefile</h2>
+<!-- TODO: Add more info. -->
+<!-- TODO: Can this be added to "tools"? -->
+<!-- See: https://makefiletutorial.com/ --->
+
+<p>Originated from C and C++ to compile code.</p>
+<p>Is available by default in Linux and OSX by using the <code>make</code> command.</p>
+<p>A neat example for python is given below.</p>
+<div class="highlight"><pre><span></span><code><span class="nv">SHELL</span> <span class="o">:=</span> /bin/bash
+<span class="nv">VENV</span> <span class="o">=</span> ./.venv
+<span class="nv">PYTHON</span> <span class="o">=</span> <span class="k">$(</span>VENV<span class="k">)</span>/bin/python3
+<span class="nv">PIP</span> <span class="o">=</span> <span class="k">$(</span>VENV<span class="k">)</span>/bin/pip
+<span class="c"># .PHONY: run clean</span>
+
+<span class="nf">setup</span><span class="o">:</span> <span class="n">requirements</span>.<span class="n">txt</span>
+    python -m venv <span class="k">$(</span>VENV<span class="k">)</span>
+    <span class="k">$(</span>PIP<span class="k">)</span> install -r requirements.txt
+
+<span class="nf">run</span><span class="o">:</span>
+    <span class="nb">source</span> ./.venv/bin/activate
+    <span class="nb">echo</span> <span class="s2">&quot;No scripts yet!&quot;</span>
+
+<span class="nf">clean</span><span class="o">:</span>
+    deactivate
+    rm -rf __pycache__
+    rm -rf <span class="k">$(</span>VENV<span class="k">)</span>
+</code></pre></div>
 
               
             </article>
