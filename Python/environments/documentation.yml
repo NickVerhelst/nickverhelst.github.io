@@ -16,3 +16,4 @@ dependencies:
   - pip
   - pip:
     - mkdocs-pdf-export-plugin # Allows you to export mkdocs to a pdf page
+    - grip # A GitHub style markdown generator (host Markdown in browser)
