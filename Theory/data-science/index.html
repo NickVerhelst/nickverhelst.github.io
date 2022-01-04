@@ -17,7 +17,7 @@
     
     
       
-        <title>Building baseline models - Nick's Software Dev Docs</title>
+        <title>Data Science - Nick's Software Dev Docs</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-baseline-models" class="md-skip">
+        <a href="#data-science" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building baseline models
+              Data Science
             
           </span>
         </div>
@@ -862,9 +862,95 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Science
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Building baseline models
+        Data Science
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-baseline-models" class="md-nav__link">
+    Building baseline models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-score-matrix" class="md-nav__link">
+    The score matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precision-recall" class="md-nav__link">
+    Precision-recall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc-curve" class="md-nav__link">
+    ROC curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-curve" class="md-nav__link">
+    Calibration curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lift-curve" class="md-nav__link">
+    Lift curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cumulative-gains-curve" class="md-nav__link">
+    Cumulative Gains curve
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1155,6 +1241,76 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-baseline-models" class="md-nav__link">
+    Building baseline models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-score-matrix" class="md-nav__link">
+    The score matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precision-recall" class="md-nav__link">
+    Precision-recall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc-curve" class="md-nav__link">
+    ROC curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-curve" class="md-nav__link">
+    Calibration curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lift-curve" class="md-nav__link">
+    Lift curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cumulative-gains-curve" class="md-nav__link">
+    Cumulative Gains curve
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1170,10 +1326,35 @@
 </a>
 
 
-<h1 id="building-baseline-models">Building baseline models</h1>
+<h1 id="data-science">Data Science</h1>
+<h2 id="building-baseline-models">Building baseline models</h2>
 <p>Regression: Take the average value of the “target” y and compare with that (simplest baseline model).
 Classification: Take the class that occurs the most and compare with that (simplest baseline model).</p>
 <p>Next best model: a simple linear regression. The problem with this is that it can get worse if you have strong non-linear effects. A baseline model that focusses purely on the target values is therefore more advised.</p>
+<h2 id="metrics">Metrics</h2>
+<p>Many used metrics in Data Science:</p>
+<ul>
+<li>Precision</li>
+<li>Recall</li>
+<li>Accuracy</li>
+<li>F1 score</li>
+<li>Correlation</li>
+<li>Logloss</li>
+<li>Mean square error (MSE)</li>
+<li>Root mean square error (RMSE)</li>
+<li>Mean absolute error (MAE)</li>
+<li>Mean Average Percent Error (MAPE)</li>
+<li>(adjusted) rsquared <span class="arithmatex">\(R^2\)</span> (or coefficient of determination)</li>
+</ul>
+<p>Note that when dealing with multiple classes there is also a micro-macro distinction often to be made.</p>
+<h3 id="the-score-matrix">The score matrix</h3>
+<p>Here we assign scores to outcomes.</p>
+<h3 id="precision-recall">Precision-recall</h3>
+<p>common curve</p>
+<h3 id="roc-curve">ROC curve</h3>
+<h3 id="calibration-curve">Calibration curve</h3>
+<h3 id="lift-curve">Lift curve</h3>
+<h3 id="cumulative-gains-curve">Cumulative Gains curve</h3>
 
               
             </article>
@@ -1270,6 +1451,12 @@ Classification: Take the class that occurs the most and compare with that (simpl
     
     
       <script src="../../assets/javascripts/bundle.a5f8ea78.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
