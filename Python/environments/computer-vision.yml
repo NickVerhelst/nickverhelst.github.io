@@ -1,4 +1,4 @@
-name: statistical-simulation
+name: computer-vision
 channels:
   - anaconda
   - conda-forge
