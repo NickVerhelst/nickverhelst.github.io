@@ -17,7 +17,7 @@
     
     
       
-        <title>Data Quality - Nick's Software Dev Docs</title>
+        <title>Model building and validation - Nick's Software Dev Docs</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-quality" class="md-skip">
+        <a href="#model-building-and-validation" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Quality
+              Model building and validation
             
           </span>
         </div>
@@ -221,6 +221,24 @@
         
   
   
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../big-data/" class="md-tabs__link md-tabs__link--active">
+        Data
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
 
 
   
@@ -269,15 +287,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../Theory/" class="md-tabs__link">
         Theory
       </a>
     </li>
@@ -427,23 +443,252 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
       
         <label class="md-nav__link" for="__nav_3">
+          Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../big-data/" class="md-nav__link">
+        Big Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-landscape-governance/" class="md-nav__link">
+        Roles in the data landscape
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-landscape-technology/" class="md-nav__link">
+        Technologies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-quality/" class="md-nav__link">
+        Data Quality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Model building and validation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Model building and validation
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#building-baseline-models" class="md-nav__link">
+    Building baseline models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-score-matrix" class="md-nav__link">
+    The score matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precision-recall" class="md-nav__link">
+    Precision-recall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc-curve" class="md-nav__link">
+    ROC curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-curve" class="md-nav__link">
+    Calibration curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lift-curve" class="md-nav__link">
+    Lift curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cumulative-gains-curve" class="md-nav__link">
+    Cumulative Gains curve
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-techniques" class="md-nav__link">
+    Validation techniques
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-parameters" class="md-nav__link">
+    Basic parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-bias-variance-look-at-overunderfitting" class="md-nav__link">
+    - Bias &amp; variance: Look at over/underfitting
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
           Python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Python" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Python
         </label>
@@ -606,18 +851,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_4">
+        <label class="md-nav__link" for="__nav_5">
           References
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="References" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           References
         </label>
@@ -668,18 +913,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_6">
           SQL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SQL" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           SQL
         </label>
@@ -753,25 +998,23 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_7">
           Theory
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Theory" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           Theory
         </label>
@@ -783,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../Theory/" class="md-nav__link">
         Theory
       </a>
     </li>
@@ -797,21 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../big-data/" class="md-nav__link">
-        Big Data
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../coding-principles/" class="md-nav__link">
+      <a href="../../Theory/coding-principles/" class="md-nav__link">
         Coding Principles
       </a>
     </li>
@@ -825,104 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-landscape-governance/" class="md-nav__link">
-        Roles in the data landscape
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../data-landscape-technology/" class="md-nav__link">
-        Technologies
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Data Quality
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Data Quality
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-fellegi-holt-method-for-data-cleaning" class="md-nav__link">
-    The Fellegi-Holt method for data cleaning
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../data-science/" class="md-nav__link">
-        Data Science
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../deployment-strategies/" class="md-nav__link">
+      <a href="../../Theory/deployment-strategies/" class="md-nav__link">
         Deployment Strategies
       </a>
     </li>
@@ -936,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../learning-and-certification/" class="md-nav__link">
+      <a href="../../Theory/learning-and-certification/" class="md-nav__link">
         Learning and Certification
       </a>
     </li>
@@ -950,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../naming-conventions/" class="md-nav__link">
+      <a href="../../Theory/naming-conventions/" class="md-nav__link">
         Naming conventions
       </a>
     </li>
@@ -964,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quality-assurance/" class="md-nav__link">
+      <a href="../../Theory/quality-assurance/" class="md-nav__link">
         Quality Assurance
       </a>
     </li>
@@ -978,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../software-engineering/" class="md-nav__link">
+      <a href="../../Theory/software-engineering/" class="md-nav__link">
         Software engineering
       </a>
     </li>
@@ -992,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../solution-development/" class="md-nav__link">
+      <a href="../../Theory/solution-development/" class="md-nav__link">
         Solution Development
       </a>
     </li>
@@ -1006,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows-subsystem-for-linux/" class="md-nav__link">
+      <a href="../../Theory/windows-subsystem-for-linux/" class="md-nav__link">
         Windows Subsystem for Linux
       </a>
     </li>
@@ -1031,18 +1163,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_7">
+        <label class="md-nav__link" for="__nav_8">
           Tools
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tools" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
+        <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           Tools
         </label>
@@ -1207,8 +1339,90 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-fellegi-holt-method-for-data-cleaning" class="md-nav__link">
-    The Fellegi-Holt method for data cleaning
+  <a href="#building-baseline-models" class="md-nav__link">
+    Building baseline models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    Metrics
+  </a>
+  
+    <nav class="md-nav" aria-label="Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-score-matrix" class="md-nav__link">
+    The score matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precision-recall" class="md-nav__link">
+    Precision-recall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc-curve" class="md-nav__link">
+    ROC curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-curve" class="md-nav__link">
+    Calibration curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lift-curve" class="md-nav__link">
+    Lift curve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cumulative-gains-curve" class="md-nav__link">
+    Cumulative Gains curve
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-techniques" class="md-nav__link">
+    Validation techniques
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-parameters" class="md-nav__link">
+    Basic parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-bias-variance-look-at-overunderfitting" class="md-nav__link">
+    - Bias &amp; variance: Look at over/underfitting
   </a>
   
 </li>
@@ -1225,13 +1439,45 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/NickVerhelst/code-snippets/edit/master/docs/Theory/data-quality.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/NickVerhelst/code-snippets/edit/master/docs/Data/model-building-and-validation.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="data-quality">Data Quality</h1>
-<h2 id="the-fellegi-holt-method-for-data-cleaning">The Fellegi-Holt method for data cleaning</h2>
+<h1 id="model-building-and-validation">Model building and validation</h1>
+<h2 id="building-baseline-models">Building baseline models</h2>
+<p>Regression: Take the average value of the “target” y and compare with that (simplest baseline model).
+Classification: Take the class that occurs the most and compare with that (simplest baseline model).</p>
+<p>Next best model: a simple linear regression. The problem with this is that it can get worse if you have strong non-linear effects. A baseline model that focusses purely on the target values is therefore more advised.</p>
+<h2 id="metrics">Metrics</h2>
+<p>Many used metrics in Data Science:</p>
+<ul>
+<li>Precision</li>
+<li>Recall</li>
+<li>Accuracy</li>
+<li>F1 score</li>
+<li>Correlation</li>
+<li>Logloss</li>
+<li>Mean square error (MSE)</li>
+<li>Root mean square error (RMSE)</li>
+<li>Mean absolute error (MAE)</li>
+<li>Mean Average Percent Error (MAPE)</li>
+<li>(adjusted) rsquared <span class="arithmatex">\(R^2\)</span> (or coefficient of determination)</li>
+</ul>
+<p>Note that when dealing with multiple classes there is also a micro-macro distinction often to be made.</p>
+<h3 id="the-score-matrix">The score matrix</h3>
+<p>Here we assign scores to outcomes.</p>
+<h3 id="precision-recall">Precision-recall</h3>
+<p>common curve</p>
+<h3 id="roc-curve">ROC curve</h3>
+<h3 id="calibration-curve">Calibration curve</h3>
+<h3 id="lift-curve">Lift curve</h3>
+<h3 id="cumulative-gains-curve">Cumulative Gains curve</h3>
+<h2 id="validation-techniques">Validation techniques</h2>
+<p>Using the techniques and metrics above, we can now validate the different models.</p>
+<p>hyperparameter tuning, algorithem selection, how to compare models</p>
+<h3 id="basic-parameters">Basic parameters</h3>
+<h2 id="-bias-variance-look-at-overunderfitting">- Bias &amp; variance: Look at over/underfitting</h2>
 
               
             </article>
@@ -1250,7 +1496,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../data-landscape-technology/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Technologies" rel="prev">
+        <a href="../data-quality/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Quality" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1259,20 +1505,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Technologies
+              Data Quality
             </div>
           </div>
         </a>
       
       
         
-        <a href="../data-science/" class="md-footer__link md-footer__link--next" aria-label="Next: Data Science" rel="next">
+        <a href="../../Python/" class="md-footer__link md-footer__link--next" aria-label="Next: Python" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Data Science
+              Python
             </div>
           </div>
           <div class="md-footer__button md-icon">
