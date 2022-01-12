@@ -842,7 +842,7 @@
   
     <li class="md-nav__item">
       <a href="../../References/data-science/" class="md-nav__link">
-        Data science
+        Data Science
       </a>
     </li>
   
@@ -918,7 +918,7 @@
   
     <li class="md-nav__item">
       <a href="../../SQL/sql-information-schema/" class="md-nav__link">
-        Sql information schema
+        SQL Information Schema
       </a>
     </li>
   
@@ -932,7 +932,7 @@
   
     <li class="md-nav__item">
       <a href="../../SQL/user-management/" class="md-nav__link">
-        User management
+        User Management
       </a>
     </li>
   
@@ -1064,7 +1064,7 @@
   
     <li class="md-nav__item">
       <a href="../../Theory/software-engineering/" class="md-nav__link">
-        Software engineering
+        Software Engineering
       </a>
     </li>
   
@@ -1154,7 +1154,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/api/" class="md-nav__link">
-        Api
+        API
       </a>
     </li>
   
@@ -1196,7 +1196,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/design-and-documentation/" class="md-nav__link">
-        Design and documentation
+        Design and Documentation
       </a>
     </li>
   
@@ -1210,7 +1210,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/package-managers/" class="md-nav__link">
-        Package managers
+        Package Managers
       </a>
     </li>
   
@@ -1224,7 +1224,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/project-organization/" class="md-nav__link">
-        Project organization
+        Project Organization
       </a>
     </li>
   
@@ -1251,8 +1251,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/vizualization/" class="md-nav__link">
-        Vizualization
+      <a href="../../Tools/visualization/" class="md-nav__link">
+        Visualization
       </a>
     </li>
   
@@ -1338,11 +1338,11 @@
 
 <h1 id="packaging-projects">Packaging projects</h1>
 <h2 id="creating-a-package">Creating a package</h2>
-<p><code>setup.py</code> and <code>__init__.py</code> files to make the package installable. An example on 
-a typical setup script is shown below, where you are installing a package in the 
+<p><code>setup.py</code> and <code>__init__.py</code> files to make the package installable. An example on
+a typical setup script is shown below, where you are installing a package in the
 current directory. The <code>__init__.py</code> file is just a listing of default functions
-that are imported when importing the package, or which code to run on import. 
-If the init file is left empty, python will still recognize it as a package but 
+that are imported when importing the package, or which code to run on import.
+If the init file is left empty, python will still recognize it as a package but
 perform no further actions on import.</p>
 <div class="highlight"><span class="filename">setup.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">basename</span><span class="p">,</span> <span class="n">splitext</span>
@@ -1373,22 +1373,22 @@ your file containing the code to the system path in order to be able to import t
 python package. For example, if your code is placed in a folder '../src', you can
 add the path using the code snippet below. Once the path is imported, you can read
 the python files as if it were packages.
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../src&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../src&#39;</span><span class="p">)</span>
 </code></pre></div></p>
 </details>
 <h2 id="packaging-a-package">Packaging a package</h2>
 <p>Build a wheel file.</p>
 <h2 id="reloading-imported-packages-in-jupyter">Reloading imported packages in jupyter</h2>
-<p>In jupyter notebooks, python imports are chached. This means that once you have 
+<p>In jupyter notebooks, python imports are chached. This means that once you have
 imported something that it will not be reloaded (net even when re-running the <code>import</code> statement).</p>
 <p>If you are actively working on source files, the changes of the package need to be
 incorporated on the fly. So the caching behavior is then unwanted.</p>
 <p>Using IPython and notebook magic, it is possible to enable the auto-reloading feature
-using the code snippet below.
+using the code snippet below.</p>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">load_ext</span> <span class="n">autoreload</span>
 <span class="o">%</span><span class="n">autoreload</span> <span class="mi">2</span>
-</code></pre></div></p>
+</code></pre></div>
 
               
             </article>

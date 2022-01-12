@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setting-up-a-virtual-environment" class="md-skip">
+        <a href="#environments" class="md-skip">
           Skip to content
         </a>
       
@@ -653,6 +653,8 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Environments
@@ -668,6 +670,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -831,7 +835,7 @@
   
     <li class="md-nav__item">
       <a href="../../References/data-science/" class="md-nav__link">
-        Data science
+        Data Science
       </a>
     </li>
   
@@ -907,7 +911,7 @@
   
     <li class="md-nav__item">
       <a href="../../SQL/sql-information-schema/" class="md-nav__link">
-        Sql information schema
+        SQL Information Schema
       </a>
     </li>
   
@@ -921,7 +925,7 @@
   
     <li class="md-nav__item">
       <a href="../../SQL/user-management/" class="md-nav__link">
-        User management
+        User Management
       </a>
     </li>
   
@@ -1053,7 +1057,7 @@
   
     <li class="md-nav__item">
       <a href="../../Theory/software-engineering/" class="md-nav__link">
-        Software engineering
+        Software Engineering
       </a>
     </li>
   
@@ -1143,7 +1147,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/api/" class="md-nav__link">
-        Api
+        API
       </a>
     </li>
   
@@ -1185,7 +1189,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/design-and-documentation/" class="md-nav__link">
-        Design and documentation
+        Design and Documentation
       </a>
     </li>
   
@@ -1199,7 +1203,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/package-managers/" class="md-nav__link">
-        Package managers
+        Package Managers
       </a>
     </li>
   
@@ -1213,7 +1217,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/project-organization/" class="md-nav__link">
-        Project organization
+        Project Organization
       </a>
     </li>
   
@@ -1240,8 +1244,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/vizualization/" class="md-nav__link">
-        Vizualization
+      <a href="../../Tools/visualization/" class="md-nav__link">
+        Visualization
       </a>
     </li>
   
@@ -1270,6 +1274,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1316,27 +1322,26 @@
 </a>
 
 
-  <h1>Environments</h1>
-
+<h1 id="environments">Environments</h1>
 <p>For python we have serval environments defined based on a set of YAML files.</p>
 <h2 id="setting-up-a-virtual-environment">Setting up a virtual environment</h2>
 <p>Working with virtual (isolated) environments is strongly encouraged as this will increase the portability of your software project. (add footnote: Installing all packages in your "base" installation is also considered bad practice. The reason for this is that packages can interfere with each other, leading to unexpected bugs.)</p>
 <p>There are many options to create a virtual environment. The two most popular ways are:</p>
 <ul>
 <li>Using conda: This is the easiest way to start. In this case there is a visual user interface and integration with your (Power)Shell. Also conda can manage other packages for you as well.</li>
-<li>Using pipenv: Here you manage the environments (location) yourself. This gives you more control. Also pipenv appears to be more suited to work with packages. An additional feature in pipenv is to label packages as <code>--dev</code> packages (avoiding that these get pushed to production). </li>
+<li>Using pipenv: Here you manage the environments (location) yourself. This gives you more control. Also pipenv appears to be more suited to work with packages. An additional feature in pipenv is to label packages as <code>--dev</code> packages (avoiding that these get pushed to production).</li>
 </ul>
 <blockquote>
-<p><strong>Note</strong> If you want to go next level, you can deploy your code as a containerized app. An example is to use docker to do this.</p>
-<p>Second note: Poetry is also a strongly upcoming package.</p>
+<p><strong>Note</strong> If you want to go next level, you can deploy your code as a containerized app. An example is to use docker to do this.<br />
+Second note: Poetry is also a strongly upcoming package.</p>
 </blockquote>
 <p>The big advantage of working with the pyvenv virtual environments is that these are usually liteweight, allowing for fast prototyping. Using the <code>pip list --format=freeze &gt; requirements.txt</code> command you can easily generate the <code>requirements.txt</code> file for further deployment.</p>
 <p>The conda virtual envrionments are typically used personally to set up full-fletched environments that contain too many packages. This is powerful to do a quick analysis or proof of value (PoV), or to keep a personal catalog of interesting packages. For a Proof of Concept (PoC) and beyond it is more beneficial to work with personally-managed pipvenv virtual environments. Note that .venv folders are typically part of the gitignore, forcing you to work with a <code>requirements.txt</code> file.</p>
 <h2 id="setting-up-an-environment">Setting up an environment</h2>
 <p>Installing based on a file is easy:</p>
 <blockquote>
-<p>Show both the conda and pip command using the "toggle"</p>
-<p>Very important is to fix the versions of your packages.</p>
+<p>Show both the conda and pip command using the "toggle".<br />
+Very important is to fix the versions of your packages.</p>
 </blockquote>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label></div>
 <div class="tabbed-content">
@@ -1353,11 +1358,11 @@
 <details class="hint">
 <summary>A virtual environment belongs to a project.</summary>
 <p>Typically the virtual environment is installed in the directory './.venv' (when installed via pip).
-This way the virtual environment is specific for your project. Note that the virtual environment 
+This way the virtual environment is specific for your project. Note that the virtual environment
 typically is not named. The preceding dot '.' in the location name makes it clear that the virtual
 environment is a special file. Normally a <code>requirements.txt</code> file is provided next tot he .venv
-folder so that the .venv can always be rebuilt from scratch.</p>
-<p>For conda, the virtual environments are <strong>not</strong> project specific. In the case of conda, 
+folder so that the .venv can always be rebuilt from scratch.<br />
+For conda, the virtual environments are <strong>not</strong> project specific. In the case of conda,
 the environments are installed in a central location.</p>
 </details>
 <h2 id="the-different-environments">The different environments</h2>
@@ -1371,8 +1376,8 @@ the environments are installed in a central location.</p>
 <summary>Package versions should <em>always</em> be specified.</summary>
 <p>In the provided examples, the package versions were not always specified.
 Note that this can lead to inconsistencies and unknown bugs when re-installing
-the environments.</p>
-<p>For a local poc/development setting this setup can be okay as you will first try
+the environments.<br />
+For a local poc/development setting this setup can be okay as you will first try
 to build the solution. When going into testing/production, the versions should be
 specified <em>always</em> in order to avoid unknown errors.</p>
 </details>
@@ -1389,7 +1394,7 @@ version in your requirements file and re-run the command, pip will detect the ch
 and update accordingly.</p>
 </div>
 <div class="tabbed-block">
-<p>For conda, the environments are defined using YAML files. To install en environment using conda, use the command <code>conda env create -f &lt;filename&gt;</code>. A full list of 
+<p>For conda, the environments are defined using YAML files. To install en environment using conda, use the command <code>conda env create -f &lt;filename&gt;</code>. A full list of
 conda commands can be found in the <a href="conda-cheatsheet.pdf">conda cheatsheet</a>.</p>
 <ul>
 <li><a href="automation.yml">Automation</a></li>

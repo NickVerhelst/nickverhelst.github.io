@@ -17,7 +17,7 @@
     
     
       
-        <title>Sql information schema - Nick's Software Dev Docs</title>
+        <title>SQL Information Schema - Nick's Software Dev Docs</title>
       
     
     
@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sql-information-schema" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -94,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sql information schema
+              SQL Information Schema
             
           </span>
         </div>
@@ -773,7 +778,7 @@
   
     <li class="md-nav__item">
       <a href="../../References/data-science/" class="md-nav__link">
-        Data science
+        Data Science
       </a>
     </li>
   
@@ -856,10 +861,43 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SQL Information Schema
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Sql information schema
+        SQL Information Schema
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-information-on-all-columns-in-the-database" class="md-nav__link">
+    Get information on all columns in the database
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -873,7 +911,7 @@
   
     <li class="md-nav__item">
       <a href="../user-management/" class="md-nav__link">
-        User management
+        User Management
       </a>
     </li>
   
@@ -1005,7 +1043,7 @@
   
     <li class="md-nav__item">
       <a href="../../Theory/software-engineering/" class="md-nav__link">
-        Software engineering
+        Software Engineering
       </a>
     </li>
   
@@ -1095,7 +1133,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/api/" class="md-nav__link">
-        Api
+        API
       </a>
     </li>
   
@@ -1137,7 +1175,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/design-and-documentation/" class="md-nav__link">
-        Design and documentation
+        Design and Documentation
       </a>
     </li>
   
@@ -1151,7 +1189,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/package-managers/" class="md-nav__link">
-        Package managers
+        Package Managers
       </a>
     </li>
   
@@ -1165,7 +1203,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/project-organization/" class="md-nav__link">
-        Project organization
+        Project Organization
       </a>
     </li>
   
@@ -1192,8 +1230,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/vizualization/" class="md-nav__link">
-        Vizualization
+      <a href="../../Tools/visualization/" class="md-nav__link">
+        Visualization
       </a>
     </li>
   
@@ -1213,6 +1251,39 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-information-on-all-columns-in-the-database" class="md-nav__link">
+    Get information on all columns in the database
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -1223,13 +1294,12 @@
 </a>
 
 
-  <h1>Sql information schema</h1>
-
+<h1 id="sql-information-schema">SQL Information Schema</h1>
 <p>The SQL schema 'INFORMATION_SCHEMA' contains valuable information on the metadata present in the SQL database.</p>
-<p><strong>Get information on all columns in the database</strong>
+<h2 id="get-information-on-all-columns-in-the-database">Get information on all columns in the database</h2>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">INFORMATION_SCHEMA</span><span class="p">.</span><span class="n">columns</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 
               
             </article>
@@ -1264,13 +1334,13 @@
       
       
         
-        <a href="../user-management/" class="md-footer__link md-footer__link--next" aria-label="Next: User management" rel="next">
+        <a href="../user-management/" class="md-footer__link md-footer__link--next" aria-label="Next: User Management" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              User management
+              User Management
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -828,7 +828,7 @@
   
     <li class="md-nav__item">
       <a href="../../References/data-science/" class="md-nav__link">
-        Data science
+        Data Science
       </a>
     </li>
   
@@ -904,7 +904,7 @@
   
     <li class="md-nav__item">
       <a href="../../SQL/sql-information-schema/" class="md-nav__link">
-        Sql information schema
+        SQL Information Schema
       </a>
     </li>
   
@@ -918,7 +918,7 @@
   
     <li class="md-nav__item">
       <a href="../../SQL/user-management/" class="md-nav__link">
-        User management
+        User Management
       </a>
     </li>
   
@@ -1050,7 +1050,7 @@
   
     <li class="md-nav__item">
       <a href="../../Theory/software-engineering/" class="md-nav__link">
-        Software engineering
+        Software Engineering
       </a>
     </li>
   
@@ -1140,7 +1140,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/api/" class="md-nav__link">
-        Api
+        API
       </a>
     </li>
   
@@ -1182,7 +1182,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/design-and-documentation/" class="md-nav__link">
-        Design and documentation
+        Design and Documentation
       </a>
     </li>
   
@@ -1196,7 +1196,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/package-managers/" class="md-nav__link">
-        Package managers
+        Package Managers
       </a>
     </li>
   
@@ -1210,7 +1210,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/project-organization/" class="md-nav__link">
-        Project organization
+        Project Organization
       </a>
     </li>
   
@@ -1237,8 +1237,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/vizualization/" class="md-nav__link">
-        Vizualization
+      <a href="../../Tools/visualization/" class="md-nav__link">
+        Visualization
       </a>
     </li>
   
@@ -1312,12 +1312,12 @@
 <h2 id="schedule-trigger">Schedule Trigger</h2>
 <p>Is just a point trigger. This trigger will contain no time information (except the "TriggerTime").</p>
 <p>In order to get time info, you can extract the current date using formatDateTime.</p>
-<div class="highlight"><pre><span></span><code>@formatDateTime(utcnow(), &#39;yyyyMMdd&#39;)
+<div class="highlight"><pre><span></span><code><span class="nd">@formatDateTime</span><span class="p">(</span><span class="n">utcnow</span><span class="p">(),</span> <span class="s1">&#39;yyyyMMdd&#39;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="tumbling-window-trigger">Tumbling Window Trigger</h2>
 <p>With the tumbling window trigger you  <em>do</em> have time information. Next to the "TriggerTime", you also have access to the "WindowStartTime" and "WindowEndTime".</p>
 <p>In order to get the starting time of the window for example you could use the code below.</p>
-<div class="highlight"><pre><span></span><code>@formatDateTime(trigger().outputs.windowStartTime,&#39;yyyyMMdd&#39;)
+<div class="highlight"><pre><span></span><code><span class="nd">@formatDateTime</span><span class="p">(</span><span class="n">trigger</span><span class="p">()</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">windowStartTime</span><span class="p">,</span><span class="s1">&#39;yyyyMMdd&#39;</span><span class="p">)</span>
 </code></pre></div>
 
               

@@ -835,7 +835,7 @@
   
     <li class="md-nav__item">
       <a href="../../References/data-science/" class="md-nav__link">
-        Data science
+        Data Science
       </a>
     </li>
   
@@ -911,7 +911,7 @@
   
     <li class="md-nav__item">
       <a href="../../SQL/sql-information-schema/" class="md-nav__link">
-        Sql information schema
+        SQL Information Schema
       </a>
     </li>
   
@@ -925,7 +925,7 @@
   
     <li class="md-nav__item">
       <a href="../../SQL/user-management/" class="md-nav__link">
-        User management
+        User Management
       </a>
     </li>
   
@@ -1057,7 +1057,7 @@
   
     <li class="md-nav__item">
       <a href="../../Theory/software-engineering/" class="md-nav__link">
-        Software engineering
+        Software Engineering
       </a>
     </li>
   
@@ -1147,7 +1147,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/api/" class="md-nav__link">
-        Api
+        API
       </a>
     </li>
   
@@ -1189,7 +1189,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/design-and-documentation/" class="md-nav__link">
-        Design and documentation
+        Design and Documentation
       </a>
     </li>
   
@@ -1203,7 +1203,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/package-managers/" class="md-nav__link">
-        Package managers
+        Package Managers
       </a>
     </li>
   
@@ -1217,7 +1217,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/project-organization/" class="md-nav__link">
-        Project organization
+        Project Organization
       </a>
     </li>
   
@@ -1244,8 +1244,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/vizualization/" class="md-nav__link">
-        Vizualization
+      <a href="../../Tools/visualization/" class="md-nav__link">
+        Visualization
       </a>
     </li>
   
@@ -1324,13 +1324,12 @@
 
 <h1 id="config-management">Config management</h1>
 <p>The general idea of config management is to seperate the "logic" (or "application
- layer") from the "specifics" (or "information layer"). The logic is then handled
-  by the (immutable) code base, where the "specifics" are handled by the external
-  configurations.</p>
+layer") from the "specifics" (or "information layer"). The logic is then handled
+by the (immutable) code base, where the "specifics" are handled by the external
+configurations.</p>
 <p>Typically you will have two parts in your software to handle the "specifics":</p>
 <ul>
-<li>A config file: This file contains all the configurations for the application 
-that you are running.</li>
+<li>A config file: This file contains all the configurations for the application that you are running.</li>
 <li>A config module: This module will search for config files and load these.</li>
 </ul>
 <h2 id="the-config-file">The config file</h2>
@@ -1351,10 +1350,10 @@ the package itself.</p>
 <details class="hint">
 <summary>Always try to provide default locations to place the config files.</summary>
 <p>Typically this file is placed at the root level of the application. Although
-you could also provide a custom location.</p>
-<p>The key is consistency and good conventions. This will also allow your application
-to become scalable.</p>
-<p>Note that, as your application grows, you might find the need to introduce 
+you could also provide a custom location.<br />
+The key is consistency and good conventions. This will also allow your application
+to become scalable.<br />
+Note that, as your application grows, you might find the need to introduce
 more than one config file, where each config file focusses on a separate part
 of the software.</p>
 </details>
@@ -1363,18 +1362,18 @@ of the software.</p>
 In this simple case you can then assign your configs to a dictionary that allows
 you to fetch the different config values. The problem with this approach is that
 a python dictionary is <em>not</em> immutable<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
-<p>A solution to this 'immutable' problem is to use the class 'property'. With the 
+<p>A solution to this 'immutable' problem is to use the class 'property'. With the
 'property' decorator, the class method is converted to a 'getter' function, where
 the name of the method becomes the protected class attribute. You can also add
 'setter' and 'deleter' methods to that property in order to set or delete the
-value in a defined and secure way<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. </p>
+value in a defined and secure way<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
 <p>Next to packaging the config in a class you can additionally:</p>
 <ul>
 <li>Fetch the attributes via a private function (e.g. <code>_set_name(self)</code>) in the function
- below. When doing this, the function <code>set_name</code> will be called every time the attribure
- is read. This is useful for long-running applications where the configs can change
- during runtime. By re-reading you will always have the most recent version of your
- config files.</li>
+below. When doing this, the function <code>set_name</code> will be called every time the attribute
+is read. This is useful for long-running applications where the configs can change
+during runtime. By re-reading you will always have the most recent version of your
+config files.</li>
 <li>Config files are useful for values that should not change that frequently. If you
 have runtime variables that tend to change often, these can be added as environment
 variabels. In this case you will read the value via the <code>os.environ.get('name')</code>.</li>
@@ -1410,17 +1409,19 @@ variabels. In this case you will read the value via the <code>os.environ.get('na
      <span class="k">def</span> <span class="nf">_set_name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name)</span>
 
-<span class="c1"># At the end we instatiate the class in the CONFIG variable.</span>
+<span class="c1"># At the end we instantiate the class in the CONFIG variable.</span>
 <span class="n">CONFIG</span> <span class="o">=</span> <span class="n">_Config</span><span class="p">()</span>
 </code></pre></div>
 <p>To use the config file, you simply do <code>from .config import CONFIG</code>. Every attribute
 can then be fetched using the <code>CONFIG.&lt;attribute&gt;</code>. In the above case we have
 for example <code>CONFIG.name</code>.</p>
 <h2 id="additional-notes">Additional notes</h2>
-<p>There appear to be other packages that can be useful for this as well:
-- Hydra
-- pydantic
-- dynaconf</p>
+<p>There appear to be other packages that can be useful for this as well:</p>
+<ul>
+<li>Hydra</li>
+<li>pydantic</li>
+<li>dynaconf</li>
+</ul>
 <p>Still to be seen/tested.</p>
 <!-- Footnotes -->
 <div class="footnote">
@@ -1428,7 +1429,7 @@ for example <code>CONFIG.name</code>.</p>
 <ol>
 <li id="fn:1">
 <p>As an alternative, you could also work any type of format. Important is to
-keep the "ease of use" and portability in mind. For example, XML files might be 
+keep the "ease of use" and portability in mind. For example, XML files might be
 not so easy to handle by the end user (or easy to read by the developer). Popular
 file formats are: JSON, YAML and INI. Note that sometimes also SQL databases might
 get used depending on the use-case.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>

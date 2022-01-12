@@ -778,7 +778,7 @@
   
     <li class="md-nav__item">
       <a href="../../References/data-science/" class="md-nav__link">
-        Data science
+        Data Science
       </a>
     </li>
   
@@ -854,7 +854,7 @@
   
     <li class="md-nav__item">
       <a href="../../SQL/sql-information-schema/" class="md-nav__link">
-        Sql information schema
+        SQL Information Schema
       </a>
     </li>
   
@@ -868,7 +868,7 @@
   
     <li class="md-nav__item">
       <a href="../../SQL/user-management/" class="md-nav__link">
-        User management
+        User Management
       </a>
     </li>
   
@@ -1070,6 +1070,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#regression-testing" class="md-nav__link">
+    Regression testing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#load-testing" class="md-nav__link">
     Load testing
   </a>
@@ -1104,7 +1111,7 @@
   
     <li class="md-nav__item">
       <a href="../software-engineering/" class="md-nav__link">
-        Software engineering
+        Software Engineering
       </a>
     </li>
   
@@ -1194,7 +1201,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/api/" class="md-nav__link">
-        Api
+        API
       </a>
     </li>
   
@@ -1236,7 +1243,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/design-and-documentation/" class="md-nav__link">
-        Design and documentation
+        Design and Documentation
       </a>
     </li>
   
@@ -1250,7 +1257,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/package-managers/" class="md-nav__link">
-        Package managers
+        Package Managers
       </a>
     </li>
   
@@ -1264,7 +1271,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/project-organization/" class="md-nav__link">
-        Project organization
+        Project Organization
       </a>
     </li>
   
@@ -1291,8 +1298,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/vizualization/" class="md-nav__link">
-        Vizualization
+      <a href="../../Tools/visualization/" class="md-nav__link">
+        Visualization
       </a>
     </li>
   
@@ -1381,6 +1388,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#regression-testing" class="md-nav__link">
+    Regression testing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#load-testing" class="md-nav__link">
     Load testing
   </a>
@@ -1421,11 +1435,13 @@
 <p>In order to maximize the gains from QA, this should be automated as much as possible in a Continuous Integration (CI) loop within the DevOps cycle.</p>
 <h2 id="a-typical-qa-flow">A typical QA flow</h2>
 <p>Typically in a QA flow a typical Quality Control (QC) flow is followed: first test before deploying to production.</p>
-<p>In the most ideal case, you have the DTAP environments:
-- Development: In this environment the actual code is developed. Developers can freely experiment without worrying about production. All changes of the development environment are combined using the Continuous Integration (CI) best practices.
-- Testing: From development, code can be automatically deployed using the Continuous Delevery/Deployment (CD) best practices. On this server the different tests can be ran.
-- Acceptance: If the tests are approved, the code can be automatically deployed to the acceptance server. This environment is an exact copy of the production environment and ideal for performing integration testing. This environment can be use to showcase new features to business and end-users and allow them to test these.
-- Production: If all code changes are approved, the acceptance code can again be automatically deployed to production.</p>
+<p>In the most ideal case, you have the DTAP environments:</p>
+<ul>
+<li>Development: In this environment the actual code is developed. Developers can freely experiment without worrying about production. All changes of the development environment are combined using the Continuous Integration (CI) best practices.</li>
+<li>Testing: From development, code can be automatically deployed using the Continuous Delevery/Deployment (CD) best practices. On this server the different tests can be ran.</li>
+<li>Acceptance: If the tests are approved, the code can be automatically deployed to the acceptance server. This environment is an exact copy of the production environment and ideal for performing integration testing. This environment can be use to showcase new features to business and end-users and allow them to test these.</li>
+<li>Production: If all code changes are approved, the acceptance code can again be automatically deployed to production.</li>
+</ul>
 <p>The key words in all stages are <em>automated deployment</em>, at each step we should avoid manual intervention.</p>
 <p>Note that for smaller projects, keeping up 4 environments if often too costly. You should <em>always</em> strive to have at least a separate development and production environment if you want to avoid downtimes. Testing/acceptance can then be (partially) solved by setting up a good CI scheme including automated testing.</p>
 <h2 id="automated-testing-techniques">Automated Testing Techniques</h2>
@@ -1437,19 +1453,25 @@
 <p>A unit test is a technique where isolated parts of the code are tested on predefined test cases.</p>
 <p>By adding unit tests to your CD process, you increase the trust in your codebase as parts will get automatically tested.</p>
 <p>The amount of code that is submitted to unit testing is called the "code coverage", the higher the better. Note that code coverage and amount of unit tests that pass are typical metrics to report on CD systems (e.g. GitHub).</p>
-<p>Good unit tests to run are:
-- Tests you expect to work (typical uses)
-- Tests you expect to fail (cases that should fail)
-- Edge cases (cases that only occur in very extreme cases)</p>
+<p>Good unit tests to run are:</p>
+<ul>
+<li>Tests you expect to work (typical uses)</li>
+<li>Tests you expect to fail (cases that should fail)</li>
+<li>Edge cases (cases that only occur in very extreme cases)</li>
+</ul>
 <h2 id="manual-testing-techniques">Manual Testing Techniques</h2>
 <p>The tests here are typically ran either manual during a development cycle, or after deployment on a dedicated test/acceptance server. In the latter case, these flows are often scheduled.</p>
 <h3 id="integration-testing">Integration testing</h3>
 <p>When integration testing, all pieces of the code and ran together. By integration testing you can get an idea on how the code performs and works together when the software is ran end-to-end.</p>
-<p>Typically when integration testing, you might want to look at the following metrics:
-- Timing: How much time does the code need to run. This might for example be relevant for API endpoints.
-- Resource usage: Can the code comfortably run on the given resource? What is de CPU/Memory usage?</p>
+<p>Typically when integration testing, you might want to look at the following metrics:</p>
+<ul>
+<li>Timing: How much time does the code need to run. This might for example be relevant for API endpoints.</li>
+<li>Resource usage: Can the code comfortably run on the given resource? What is de CPU/Memory usage?</li>
+</ul>
+<h3 id="regression-testing">Regression testing</h3>
+<p>Tests to check if software is still correctly functioning after a change has occurred.</p>
 <h3 id="load-testing">Load testing</h3>
-<p>With load testing, you will test how the code works with multiple incoming requests. In this type of tests, the code is ran multiple times. By increasing the number of runs/requests, one can see how the code performance remains under different loads. </p>
+<p>With load testing, you will test how the code works with multiple incoming requests. In this type of tests, the code is ran multiple times. By increasing the number of runs/requests, one can see how the code performance remains under different loads.</p>
 <p>This is a special case of integration testing which is typically used to test API endpoints.</p>
 <h3 id="sanity-and-smoke-testing">Sanity and Smoke testing</h3>
 <p>In this type of testing, you try typical cases in the code and see if the code behaves as you expect it to behave.</p>
@@ -1492,13 +1514,13 @@
       
       
         
-        <a href="../software-engineering/" class="md-footer__link md-footer__link--next" aria-label="Next: Software engineering" rel="next">
+        <a href="../software-engineering/" class="md-footer__link md-footer__link--next" aria-label="Next: Software Engineering" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Software engineering
+              Software Engineering
             </div>
           </div>
           <div class="md-footer__button md-icon">

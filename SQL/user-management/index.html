@@ -17,7 +17,7 @@
     
     
       
-        <title>User management - Nick's Software Dev Docs</title>
+        <title>User Management - Nick's Software Dev Docs</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#creating-a-user-with-name-and-password-sql-authentication" class="md-skip">
+        <a href="#user-management" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              User management
+              User Management
             
           </span>
         </div>
@@ -778,7 +778,7 @@
   
     <li class="md-nav__item">
       <a href="../../References/data-science/" class="md-nav__link">
-        Data science
+        Data Science
       </a>
     </li>
   
@@ -856,7 +856,7 @@
   
     <li class="md-nav__item">
       <a href="../sql-information-schema/" class="md-nav__link">
-        Sql information schema
+        SQL Information Schema
       </a>
     </li>
   
@@ -875,14 +875,16 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          User management
+          User Management
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        User management
+        User Management
       </a>
       
         
@@ -890,6 +892,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1046,7 +1050,7 @@
   
     <li class="md-nav__item">
       <a href="../../Theory/software-engineering/" class="md-nav__link">
-        Software engineering
+        Software Engineering
       </a>
     </li>
   
@@ -1136,7 +1140,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/api/" class="md-nav__link">
-        Api
+        API
       </a>
     </li>
   
@@ -1178,7 +1182,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/design-and-documentation/" class="md-nav__link">
-        Design and documentation
+        Design and Documentation
       </a>
     </li>
   
@@ -1192,7 +1196,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/package-managers/" class="md-nav__link">
-        Package managers
+        Package Managers
       </a>
     </li>
   
@@ -1206,7 +1210,7 @@
   
     <li class="md-nav__item">
       <a href="../../Tools/project-organization/" class="md-nav__link">
-        Project organization
+        Project Organization
       </a>
     </li>
   
@@ -1233,8 +1237,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Tools/vizualization/" class="md-nav__link">
-        Vizualization
+      <a href="../../Tools/visualization/" class="md-nav__link">
+        Visualization
       </a>
     </li>
   
@@ -1263,6 +1267,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1302,8 +1308,7 @@
 </a>
 
 
-  <h1>User management</h1>
-
+<h1 id="user-management">User Management</h1>
 <h2 id="creating-a-user-with-name-and-password-sql-authentication">Creating a user with name and password (SQL authentication)</h2>
 <p>Note that two types of 'logins' should be created:</p>
 <ul>
@@ -1313,17 +1318,17 @@
 <blockquote>
 <p>Note: One login can be associated with many users</p>
 </blockquote>
-<p><div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="o">&lt;</span><span class="n">login_name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">PASSWORD</span><span class="o">=&lt;</span><span class="n">password_as_string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="o">&lt;</span><span class="n">login_name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">PASSWORD</span><span class="o">=&lt;</span><span class="n">password_as_string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="o">&lt;</span><span class="n">user_name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="o">&lt;</span><span class="n">login_name</span><span class="o">&gt;</span><span class="w"></span>
 </code></pre></div>
-Once the user is created, you can add different roles to that user.</p>
+<p>Once the user is created, you can add different roles to that user.</p>
 <blockquote>
 <p>Note, the login_name can be flat text, the password should be explicitly formatted as a string.</p>
 </blockquote>
 <h2 id="creating-an-azure-active-directory-aad-user">Creating an Azure Active Directory (AAD) user</h2>
-<p><div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="o">&lt;</span><span class="n">aad_user_id</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">EXTERNAL</span><span class="w"> </span><span class="n">PROVIDER</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="o">&lt;</span><span class="n">aad_user_id</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">EXTERNAL</span><span class="w"> </span><span class="n">PROVIDER</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-In this case the server-level authentication is provided by AAD RBAC: user should also be added to the database on Azure (via IAM).</p>
+<p>In this case the server-level authentication is provided by AAD RBAC: user should also be added to the database on Azure (via IAM).</p>
 <blockquote>
 <p>The AAD user ID is the e-mail address.</p>
 </blockquote>
@@ -1345,7 +1350,7 @@ In this case the server-level authentication is provided by AAD RBAC: user shoul
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../sql-information-schema/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sql information schema" rel="prev">
+        <a href="../sql-information-schema/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SQL Information Schema" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1354,7 +1359,7 @@ In this case the server-level authentication is provided by AAD RBAC: user shoul
               <span class="md-footer__direction">
                 Previous
               </span>
-              Sql information schema
+              SQL Information Schema
             </div>
           </div>
         </a>
