@@ -1,4 +1,4 @@
-name: statistical-simulation
+name: network-analysis
 channels:
   - anaconda
   - conda-forge
