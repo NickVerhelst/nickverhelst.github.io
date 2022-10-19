@@ -1593,13 +1593,19 @@
 <div class="highlight"><pre><span></span><code>wsl --set-version &lt;Distribution name&gt; <span class="m">2</span>
 </code></pre></div>
 <p>Once everything is set up, you can start using WSL everywhere!</p>
-<p>Note that you can have many different wsl distributions alongside of each other.</p>
+<p>Note that you can have many different wsl distributions alongside of each other. If you have multiple different distros installed, you can set the default wsl to run by using the command</p>
+<div class="highlight"><pre><span></span><code>wsl --setdefault &lt;Distribution name&gt;
+</code></pre></div>
 <h2 id="windows-terminal">Windows Terminal</h2>
 <p>Windows terminal is a great extension on the standard powershell that also supports WSL kernels. This application can be found in the Windows store.</p>
 <p>Once installed it will automatically detect the WSL installation.</p>
 <p>Once WSL is installed it is strongly recommended to get the latest updates for your distro. This is done using the sudo commands below.</p>
 <div class="highlight"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
 </code></pre></div>
+<p>Note that you can call the WSL subsystem from within PowerShell using</p>
+<div class="highlight"><pre><span></span><code>wsl &lt;<span class="nb">command</span> to run <span class="k">in</span> WSL&gt;
+</code></pre></div>
+<p>this will call wsl and execute the desired command.</p>
 <h2 id="opening-your-linux-filesystem">Opening your Linux filesystem</h2>
 <p>You can view the Linux file system using the Windows explorer. This can be done using the code sample below.</p>
 <div class="highlight"><pre><span></span><code>explorer.exe .
