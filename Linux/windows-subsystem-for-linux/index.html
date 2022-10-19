@@ -736,9 +736,68 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Windows Subsystem for Linux (WSL)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Windows Subsystem for Linux (WSL)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-terminal" class="md-nav__link">
+    Windows Terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opening-your-linux-filesystem" class="md-nav__link">
+    Opening your Linux filesystem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-vscode" class="md-nav__link">
+    Using VSCode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking-issues-with-wsl" class="md-nav__link">
+    Networking issues with WSL
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -857,6 +916,20 @@
     <li class="md-nav__item">
       <a href="../../Python/makefiles/" class="md-nav__link">
         Makefiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/package-managers/" class="md-nav__link">
+        Package managers
       </a>
     </li>
   
@@ -1445,6 +1518,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-terminal" class="md-nav__link">
+    Windows Terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opening-your-linux-filesystem" class="md-nav__link">
+    Opening your Linux filesystem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-vscode" class="md-nav__link">
+    Using VSCode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking-issues-with-wsl" class="md-nav__link">
+    Networking issues with WSL
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1461,6 +1577,45 @@
 
 
 <h1 id="windows-subsystem-for-linux-wsl">Windows Subsystem for Linux (WSL)</h1>
+<p>Windows Subsystem for Linux, or WSL, allows you to run Linux alongside your Windows OS. In the backend Windows will provide the needed virtualization to give you a seamless experience.</p>
+<h2 id="installation">Installation</h2>
+<p>Installing WSL can be easily done using PowerShell and the command below.</p>
+<div class="highlight"><pre><span></span><code>wsl --install
+</code></pre></div>
+<p>This will automatically install Ubuntu latest by default. If you want a different distribution you can use the command below.</p>
+<div class="highlight"><pre><span></span><code>wsl --install -d &lt;Distribution name&gt;
+</code></pre></div>
+<p>Once installed the necessary user information is requested.</p>
+<p>Important to check is which version of WSL is being ran. It is recommended to use WSL version 2 as this is more performant. You can see a list of all wsl environments and their versions via</p>
+<div class="highlight"><pre><span></span><code>wsl -l -v
+</code></pre></div>
+<p>If you need to upgrade a distribution to WSL 2, you can do this via the snippet below.</p>
+<div class="highlight"><pre><span></span><code>wsl --set-version &lt;Distribution name&gt; <span class="m">2</span>
+</code></pre></div>
+<p>Once everything is set up, you can start using WSL everywhere!</p>
+<p>Note that you can have many different wsl distributions alongside of each other.</p>
+<h2 id="windows-terminal">Windows Terminal</h2>
+<p>Windows terminal is a great extension on the standard powershell that also supports WSL kernels. This application can be found in the Windows store.</p>
+<p>Once installed it will automatically detect the WSL installation.</p>
+<p>Once WSL is installed it is strongly recommended to get the latest updates for your distro. This is done using the sudo commands below.</p>
+<div class="highlight"><pre><span></span><code>sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
+</code></pre></div>
+<h2 id="opening-your-linux-filesystem">Opening your Linux filesystem</h2>
+<p>You can view the Linux file system using the Windows explorer. This can be done using the code sample below.</p>
+<div class="highlight"><pre><span></span><code>explorer.exe .
+</code></pre></div>
+<p>Note that in Windows 11 this file system is automatically mounted in your file explorer!</p>
+<h2 id="using-vscode">Using VSCode</h2>
+<p>One great feature is that you can run VSCode in your WSL.</p>
+<p>If WSL is present it will be automatically detected.</p>
+<p>Note: If you have installed packages in windows, you will need to re-install these in WSL. This can be easily done via the "Extensions" tab of VSCode (Has a separate button for this).</p>
+<h2 id="networking-issues-with-wsl">Networking issues with WSL</h2>
+<p>In some cases WSL is not able to correctly resolve IP addresses. If this occurs you can adjust the <code>hosts</code> file by adding the following lines:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># generateHosts = false</span>
+<span class="m">127</span>.0.0.1   localhost.localdomain localhost
+<span class="m">127</span>.0.1.1   &lt;computer_name&gt;
+</code></pre></div>
+<p>Where <code>&lt;computer_name&gt;</code> is the actual name of your machine.</p>
 
               
             </article>
