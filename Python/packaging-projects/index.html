@@ -949,8 +949,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#packaging-a-package" class="md-nav__link">
-    Packaging a package
+  <a href="#creating-a-package_1" class="md-nav__link">
+    Creating a package
   </a>
   
 </li>
@@ -958,6 +958,13 @@
         <li class="md-nav__item">
   <a href="#reloading-imported-packages-in-jupyter" class="md-nav__link">
     Reloading imported packages in jupyter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatically-generating-documentation" class="md-nav__link">
+    Automatically generating documentation
   </a>
   
 </li>
@@ -1449,6 +1456,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Tools/documentation/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Tools/package-managers/" class="md-nav__link">
         Package Managers
       </a>
@@ -1560,8 +1581,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#packaging-a-package" class="md-nav__link">
-    Packaging a package
+  <a href="#creating-a-package_1" class="md-nav__link">
+    Creating a package
   </a>
   
 </li>
@@ -1569,6 +1590,13 @@
         <li class="md-nav__item">
   <a href="#reloading-imported-packages-in-jupyter" class="md-nav__link">
     Reloading imported packages in jupyter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatically-generating-documentation" class="md-nav__link">
+    Automatically generating documentation
   </a>
   
 </li>
@@ -1631,8 +1659,41 @@ the python files as if it were packages.
     <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../src&#39;</span><span class="p">)</span>
 </code></pre></div></p>
 </details>
-<h2 id="packaging-a-package">Packaging a package</h2>
-<p>Build a wheel file.</p>
+<h2 id="creating-a-package_1">Creating a package</h2>
+<p>When writing a python package, you will typically have the following file structure:
+<div class="highlight"><pre><span></span><code>high-level-folder
+├── package_name
+│   ├── __init__.py
+│   ├── submodule.py
+│   ├── other_submodule.py
+│   └── large_subpackage
+│       ├── __init__.py
+│       └── sub_submodule.py
+├── tests
+│   ├── __init__.py
+│   ├── test_submodule.py
+│   ├── test_other_submodule.py
+│   └── test_large_subpackage
+│       ├── __init__.py
+│       └── test_sub_submodule.py
+├── dist <span class="o">(</span>or build<span class="o">)</span>
+├── docs
+├── Pipfile <span class="o">(</span>or requirements.txt<span class="o">)</span>
+├── README.md
+├── VERSION <span class="o">(</span>a simple file with current version number<span class="o">)</span>
+├── CHANGELOG.md
+├── setup.py <span class="o">(</span><span class="k">if</span> using bower<span class="o">)</span>
+├── Makefile <span class="o">(</span>or powershell on windows<span class="o">)</span>
+├── Dockerfile <span class="o">(</span>optional<span class="o">)</span>
+├── docker-compose.yml <span class="o">(</span>optional<span class="o">)</span>
+└── .gitignore
+</code></pre></div></p>
+<p>Your high level folder can have any structure you want. Typically a kebab-case name is used, where characters are lower case. Within this folder all filenames should be snake_case, if this is not the case you will have difficulties when working with the library in python. Two top level folders will exist:</p>
+<ul>
+<li>A folder with the <code>package_name</code>, which contains the actual source code.</li>
+<li>A folder named <code>tests</code> which contains all the tests that can be ran.</li>
+</ul>
+<p>Next to these folders you have a <code>readme.md</code> file to explain your general package and a changelog and version file to discuss the active version. The <code>setup.py</code> file will have all the required settings to build the package. Once the package is built, the package file is placed in the dist folder and the generated documentation is saved in the docs folder. All current requirements for the package are listed in a pipfile or a requirements file. For additional testing we can use docker and a dockerfile to build the test environment. Finally, to automate everything and keep deploys consistent we use standard scripts to run all code. In Linux you can use the makefile in which you can define the <code>build</code>, <code>test</code> and <code>publish</code> commands for example. On windows you can consider using a powershell script to achive this.</p>
 <h2 id="reloading-imported-packages-in-jupyter">Reloading imported packages in jupyter</h2>
 <p>In jupyter notebooks, python imports are chached. This means that once you have
 imported something that it will not be reloaded (net even when re-running the <code>import</code> statement).</p>
@@ -1643,6 +1704,11 @@ using the code snippet below.</p>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">load_ext</span> <span class="n">autoreload</span>
 <span class="o">%</span><span class="n">autoreload</span> <span class="mi">2</span>
 </code></pre></div>
+<h2 id="automatically-generating-documentation">Automatically generating documentation</h2>
+<p>In order to increase the usability of the package, you should provide documentation.</p>
+<p>You could consider manually keeping the documentation up to date, but this will result in stale documentation. A better way to do this is by using automatic documentation tools. A very simple python package that can do this for you is <code>pdoc</code>, available via pip. The tool that exists a lot longer is <code>sphinx</code>. With sphinx you have some more freedom in setting up the format of the documentation. Note that the <code>mkdocs</code> package also allows you to scan python files to generate documentation.</p>
+<p>All tools will do the same thing: Generate your documentation based on a config file. The generated documentation will either be an html page of an rst or markdown file, saved in a specific directory. This allows you to build a documentation for each version of your library. The better to will allow you to mix the automatic documentation extracted from the code with custom documentation that is manually provided by you (e.g. a high level documentation).</p>
+<p>The most important thing is to just choose one tool and get comfortable in using this in your workflow. The reason is that the documentation engine is typically based on the different docstrings and comments in your code. Depending on your documentation tool, it is likely that you need to organize these comments differently.</p>
 
               
             </article>
