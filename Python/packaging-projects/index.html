@@ -831,6 +831,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../data-science-snippets/" class="md-nav__link">
+        Data Science Code Snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../documentation/" class="md-nav__link">
         Documentation
       </a>
@@ -1662,31 +1676,31 @@ the python files as if it were packages.
 <h2 id="creating-a-package_1">Creating a package</h2>
 <p>When writing a python package, you will typically have the following file structure:
 <div class="highlight"><pre><span></span><code>high-level-folder
-├── package_name
-│   ├── __init__.py
-│   ├── submodule.py
-│   ├── other_submodule.py
-│   └── large_subpackage
-│       ├── __init__.py
-│       └── sub_submodule.py
-├── tests
-│   ├── __init__.py
-│   ├── test_submodule.py
-│   ├── test_other_submodule.py
-│   └── test_large_subpackage
-│       ├── __init__.py
-│       └── test_sub_submodule.py
-├── dist <span class="o">(</span>or build<span class="o">)</span>
-├── docs
-├── Pipfile <span class="o">(</span>or requirements.txt<span class="o">)</span>
-├── README.md
-├── VERSION <span class="o">(</span>a simple file with current version number<span class="o">)</span>
-├── CHANGELOG.md
-├── setup.py <span class="o">(</span><span class="k">if</span> using bower<span class="o">)</span>
-├── Makefile <span class="o">(</span>or powershell on windows<span class="o">)</span>
-├── Dockerfile <span class="o">(</span>optional<span class="o">)</span>
-├── docker-compose.yml <span class="o">(</span>optional<span class="o">)</span>
-└── .gitignore
+├──<span class="w"> </span>package_name
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>├──<span class="w"> </span>submodule.py
+│<span class="w">   </span>├──<span class="w"> </span>other_submodule.py
+│<span class="w">   </span>└──<span class="w"> </span>large_subpackage
+│<span class="w">       </span>├──<span class="w"> </span>__init__.py
+│<span class="w">       </span>└──<span class="w"> </span>sub_submodule.py
+├──<span class="w"> </span>tests
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>├──<span class="w"> </span>test_submodule.py
+│<span class="w">   </span>├──<span class="w"> </span>test_other_submodule.py
+│<span class="w">   </span>└──<span class="w"> </span>test_large_subpackage
+│<span class="w">       </span>├──<span class="w"> </span>__init__.py
+│<span class="w">       </span>└──<span class="w"> </span>test_sub_submodule.py
+├──<span class="w"> </span>dist<span class="w"> </span><span class="o">(</span>or<span class="w"> </span>build<span class="o">)</span>
+├──<span class="w"> </span>docs
+├──<span class="w"> </span>Pipfile<span class="w"> </span><span class="o">(</span>or<span class="w"> </span>requirements.txt<span class="o">)</span>
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>VERSION<span class="w"> </span><span class="o">(</span>a<span class="w"> </span>simple<span class="w"> </span>file<span class="w"> </span>with<span class="w"> </span>current<span class="w"> </span>version<span class="w"> </span>number<span class="o">)</span>
+├──<span class="w"> </span>CHANGELOG.md
+├──<span class="w"> </span>setup.py<span class="w"> </span><span class="o">(</span><span class="k">if</span><span class="w"> </span>using<span class="w"> </span>bower<span class="o">)</span>
+├──<span class="w"> </span>Makefile<span class="w"> </span><span class="o">(</span>or<span class="w"> </span>powershell<span class="w"> </span>on<span class="w"> </span>windows<span class="o">)</span>
+├──<span class="w"> </span>Dockerfile<span class="w"> </span><span class="o">(</span>optional<span class="o">)</span>
+├──<span class="w"> </span>docker-compose.yml<span class="w"> </span><span class="o">(</span>optional<span class="o">)</span>
+└──<span class="w"> </span>.gitignore
 </code></pre></div></p>
 <p>Your high level folder can have any structure you want. Typically a kebab-case name is used, where characters are lower case. Within this folder all filenames should be snake_case, if this is not the case you will have difficulties when working with the library in python. Two top level folders will exist:</p>
 <ul>

@@ -879,6 +879,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Python/data-science-snippets/" class="md-nav__link">
+        Data Science Code Snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Python/documentation/" class="md-nav__link">
         Documentation
       </a>
@@ -1586,17 +1600,17 @@
 <p>The username and passwords are not encrypted and simply stored in plain text format. If you use this method make sure you use it on a personal computer with limited access.</p>
 </details>
 <p>On Windows machines the default credential manager (<code>wincred</code>) is used to store these secrets. If this is not the case, you can set this up using the command below.</p>
-<div class="highlight"><pre><span></span><code>git config --global credential.helper wincred
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>wincred
 </code></pre></div>
 <p>On linux (WSL to be specific) there is no such default setting. When working VSCode will prompt you for credentials every 15 minutes (expiry of password). There are two options to resolve this. One method is to use the internal credential store. This can be set up using.</p>
-<div class="highlight"><pre><span></span><code>git config --global credential.helper store
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>store
 </code></pre></div>
 <p>An alternative is to increase the cache timeout, keeping the secrets in cache longer. The below example increases the timeout to two weeks in stead of the default 15 minutes.</p>
-<div class="highlight"><pre><span></span><code>git config --global credential.helper <span class="s1">&#39;cache --timeout==1209600&#39;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span><span class="s1">&#39;cache --timeout==1209600&#39;</span>
 </code></pre></div>
 <p>If you are using MacOS, the default credentials manager is osxkeychain. In this case you do the necessary setup using the command below.</p>
 <p>On MacOS 
-<div class="highlight"><pre><span></span><code>git config --global credential.helper osxkeychain
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>osxkeychain
 </code></pre></div></p>
 <h2 id="ssh-key-based-authentication">SSH Key based authentication</h2>
 <p>The preferred solution by most software engineers is to use SSH keys. These keys are encrypted and locally protected by a password. This adds security but also ease of use.</p>

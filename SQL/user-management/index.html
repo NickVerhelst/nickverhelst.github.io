@@ -829,6 +829,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Python/data-science-snippets/" class="md-nav__link">
+        Data Science Code Snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Python/documentation/" class="md-nav__link">
         Documentation
       </a>
@@ -1586,15 +1600,15 @@
 <blockquote>
 <p>Note: One login can be associated with many users</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="o">&lt;</span><span class="n">login_name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">PASSWORD</span><span class="o">=&lt;</span><span class="n">password_as_string</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
-<span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="o">&lt;</span><span class="n">user_name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="o">&lt;</span><span class="n">login_name</span><span class="o">&gt;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="o">&lt;</span><span class="n">login_name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">PASSWORD</span><span class="o">=&lt;</span><span class="n">password_as_string</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="o">&lt;</span><span class="n">user_name</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="o">&lt;</span><span class="n">login_name</span><span class="o">&gt;</span>
 </code></pre></div>
 <p>Once the user is created, you can add different roles to that user.</p>
 <blockquote>
 <p>Note, the login_name can be flat text, the password should be explicitly formatted as a string.</p>
 </blockquote>
 <h2 id="creating-an-azure-active-directory-aad-user">Creating an Azure Active Directory (AAD) user</h2>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="o">&lt;</span><span class="n">aad_user_id</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">EXTERNAL</span><span class="w"> </span><span class="n">PROVIDER</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="o">&lt;</span><span class="n">aad_user_id</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">EXTERNAL</span><span class="w"> </span><span class="n">PROVIDER</span><span class="p">;</span>
 </code></pre></div>
 <p>In this case the server-level authentication is provided by AAD RBAC: user should also be added to the database on Azure (via IAM).</p>
 <blockquote>

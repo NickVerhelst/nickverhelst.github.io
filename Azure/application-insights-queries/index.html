@@ -886,6 +886,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Python/data-science-snippets/" class="md-nav__link">
+        Data Science Code Snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Python/documentation/" class="md-nav__link">
         Documentation
       </a>
@@ -1602,48 +1616,48 @@
 <span class="c1">// The history length is specified via the history_days argument.</span>
 <span class="c1">// To create an alert for this query, click &#39;+ New alert rule&#39;.</span>
 <span class="c1">// PARAMETERS</span>
-<span class="n">let</span><span class="w"> </span><span class="n">history_days</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ago</span><span class="p">(</span><span class="mi">3</span><span class="n">d</span><span class="p">);</span><span class="w"></span>
+<span class="n">let</span><span class="w"> </span><span class="n">history_days</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ago</span><span class="p">(</span><span class="mi">3</span><span class="n">d</span><span class="p">);</span>
 <span class="c1">// QUERY</span>
-<span class="n">requests</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">history_days</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="n">desc</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="n">timestamp</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">duration</span><span class="p">,</span><span class="w"> </span><span class="n">operation_Name</span><span class="p">,</span><span class="w"> </span><span class="n">operation_Id</span><span class="w"></span>
+<span class="n">requests</span>
+<span class="o">|</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">history_days</span>
+<span class="o">|</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span>
+<span class="o">|</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="n">desc</span>
+<span class="o">|</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="n">timestamp</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">duration</span><span class="p">,</span><span class="w"> </span><span class="n">operation_Name</span><span class="p">,</span><span class="w"> </span><span class="n">operation_Id</span>
 </code></pre></div>
 <h2 id="get-log-messages-for-a-specific-run">Get log messages for a specific run</h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Fetch logs for a specific run (e.g. a function run).</span>
 <span class="c1">// The run is specified via an &#39;operation_id&#39; (added as parameter operation_id).</span>
 <span class="c1">// To create an alert for this query, click &#39;+ New alert rule&#39;.</span>
 <span class="c1">// PARAMETERS</span>
-<span class="n">let</span><span class="w"> </span><span class="n">operation_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&#39;</span><span class="n">facc75623d7ad240a7c60acae59b7593</span><span class="err">&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="n">let</span><span class="w"> </span><span class="n">operation_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&#39;</span><span class="n">facc75623d7ad240a7c60acae59b7593</span><span class="err">&#39;</span><span class="p">;</span>
 <span class="c1">// QUERY</span>
-<span class="k">union</span><span class="w"> </span><span class="nc">traces</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="k">union</span><span class="w"> </span><span class="nc">exceptions</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">operation_Id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">operation_id</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="n">asc</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">project</span><span class="w"></span>
-<span class="w">    </span><span class="n">timestamp</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">logLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">customDimensions</span><span class="p">.[</span><span class="err">&#39;</span><span class="n">LogLevel</span><span class="err">&#39;</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">innermostMessage</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">innermostMessage</span><span class="p">,</span><span class="w"> </span><span class="n">customDimensions</span><span class="p">.[</span><span class="err">&#39;</span><span class="n">prop__</span><span class="p">{</span><span class="n">OriginalFormat</span><span class="p">}</span><span class="err">&#39;</span><span class="p">]))</span><span class="w"></span>
+<span class="k">union</span><span class="w"> </span><span class="nc">traces</span>
+<span class="o">|</span><span class="w"> </span><span class="k">union</span><span class="w"> </span><span class="nc">exceptions</span>
+<span class="o">|</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">operation_Id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">operation_id</span>
+<span class="o">|</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="n">asc</span>
+<span class="o">|</span><span class="w"> </span><span class="n">project</span>
+<span class="w">    </span><span class="n">timestamp</span><span class="p">,</span>
+<span class="w">    </span><span class="n">logLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">customDimensions</span><span class="p">.[</span><span class="err">&#39;</span><span class="n">LogLevel</span><span class="err">&#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">innermostMessage</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">innermostMessage</span><span class="p">,</span><span class="w"> </span><span class="n">customDimensions</span><span class="p">.[</span><span class="err">&#39;</span><span class="n">prop__</span><span class="p">{</span><span class="n">OriginalFormat</span><span class="p">}</span><span class="err">&#39;</span><span class="p">]))</span>
 </code></pre></div>
 <h2 id="filter-log-messages-op-specific-content">Filter log messages op specific content</h2>
 <div class="highlight"><pre><span></span><code><span class="c1">// Searches logs for a given history and looks for a given message.</span>
 <span class="c1">// The history is specified via &#39;history_days&#39; and the message via &#39;message_content&#39;.</span>
 <span class="c1">// To create an alert for this query, click &#39;+ New alert rule&#39;.</span>
 <span class="c1">// PARAMETERS</span>
-<span class="n">let</span><span class="w"> </span><span class="n">history_days</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ago</span><span class="p">(</span><span class="mi">1</span><span class="n">d</span><span class="p">);</span><span class="w"></span>
-<span class="n">let</span><span class="w"> </span><span class="n">message_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Message</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">look</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">logs</span><span class="err">&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="n">let</span><span class="w"> </span><span class="n">history_days</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ago</span><span class="p">(</span><span class="mi">1</span><span class="n">d</span><span class="p">);</span>
+<span class="n">let</span><span class="w"> </span><span class="n">message_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Message</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">look</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">logs</span><span class="err">&#39;</span><span class="p">;</span>
 <span class="c1">// QUERY</span>
-<span class="k">union</span><span class="w"> </span><span class="nc">traces</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="k">union</span><span class="w"> </span><span class="nc">exceptions</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">history_days</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="n">contains</span><span class="w"> </span><span class="n">message_content</span><span class="p">)</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="n">desc</span><span class="w"></span>
-<span class="o">|</span><span class="w"> </span><span class="n">project</span><span class="w"></span>
-<span class="w">    </span><span class="n">timestamp</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">operation_Id</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">logLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">customDimensions</span><span class="p">.[</span><span class="err">&#39;</span><span class="n">LogLevel</span><span class="err">&#39;</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">innermostMessage</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">innermostMessage</span><span class="p">,</span><span class="w"> </span><span class="n">customDimensions</span><span class="p">.[</span><span class="err">&#39;</span><span class="n">prop__</span><span class="p">{</span><span class="n">OriginalFormat</span><span class="p">}</span><span class="err">&#39;</span><span class="p">]))</span><span class="w"></span>
+<span class="k">union</span><span class="w"> </span><span class="nc">traces</span>
+<span class="o">|</span><span class="w"> </span><span class="k">union</span><span class="w"> </span><span class="nc">exceptions</span>
+<span class="o">|</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">history_days</span>
+<span class="o">|</span><span class="w"> </span><span class="n">where</span><span class="w"> </span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="n">contains</span><span class="w"> </span><span class="n">message_content</span><span class="p">)</span>
+<span class="o">|</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="n">desc</span>
+<span class="o">|</span><span class="w"> </span><span class="n">project</span>
+<span class="w">    </span><span class="n">timestamp</span><span class="p">,</span>
+<span class="w">    </span><span class="n">operation_Id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">logLevel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">customDimensions</span><span class="p">.[</span><span class="err">&#39;</span><span class="n">LogLevel</span><span class="err">&#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="n">iff</span><span class="p">(</span><span class="n">innermostMessage</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="err">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">innermostMessage</span><span class="p">,</span><span class="w"> </span><span class="n">customDimensions</span><span class="p">.[</span><span class="err">&#39;</span><span class="n">prop__</span><span class="p">{</span><span class="n">OriginalFormat</span><span class="p">}</span><span class="err">&#39;</span><span class="p">]))</span>
 </code></pre></div>
 
               
