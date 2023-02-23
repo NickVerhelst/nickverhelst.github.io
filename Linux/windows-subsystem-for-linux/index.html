@@ -803,8 +803,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#networking-issues-with-wsl" class="md-nav__link">
-    Networking issues with WSL
+  <a href="#internet-and-networking-issues-with-wsl" class="md-nav__link">
+    Internet and networking issues with WSL
   </a>
   
 </li>
@@ -1609,8 +1609,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#networking-issues-with-wsl" class="md-nav__link">
-    Networking issues with WSL
+  <a href="#internet-and-networking-issues-with-wsl" class="md-nav__link">
+    Internet and networking issues with WSL
   </a>
   
 </li>
@@ -1671,8 +1671,23 @@
 <p>One great feature is that you can run VSCode in your WSL.</p>
 <p>If WSL is present it will be automatically detected.</p>
 <p>Note: If you have installed packages in windows, you will need to re-install these in WSL. This can be easily done via the "Extensions" tab of VSCode (Has a separate button for this).</p>
-<h2 id="networking-issues-with-wsl">Networking issues with WSL</h2>
-<p>In some cases WSL is not able to correctly resolve IP addresses. If this occurs you can adjust the <code>hosts</code> file by adding the following lines:</p>
+<h2 id="internet-and-networking-issues-with-wsl">Internet and networking issues with WSL</h2>
+<p>WSL is a great tool, but it does can show some issues with networking. The reason for this is that WSL is a virtual machine that runs on top of Windows. Every time you (re)start WSL, it will reconfigure its network settings.</p>
+<p>One problem that this can cause is the fact that you are not able to resolve IP addresses.</p>
+<p>For the global internet, you will typically use the Google DNS servers (IP adress <code>8.8.8.8</code>). In order to configure this, you need to adjust the <code>/etc/resolv.conf</code> file. For this you run <code>sudo nano /etc/resolv.conf</code> and add the following lines:
+<div class="highlight"><pre><span></span><code>nameserver<span class="w"> </span><span class="m">8</span>.8.8.8
+</code></pre></div></p>
+<p>Note that <code>/etc/resolv.conf</code> is typically a symlink that is automatically system-resolved when starting WSL. If this is the the case, <code>resolv.conf</code> will always get overwritten every time you restart WSL. There are two ways to fix this.</p>
+<p>The first fix is to recreate the <code>/etc/resolv.conf</code> file and edit the file <code>/etc/wsl.conf</code> file using the following lines:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>/etc/resolv.conf
+sudo<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;nameserver 8.8.8.8&quot; &gt; /etc/resolv.conf&#39;</span>
+sudo<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;[network]&quot; &gt; /etc/wsl.conf&#39;</span>
+sudo<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;generateResolvConf = false&quot; &gt;&gt; /etc/wsl.conf&#39;</span>
+sudo<span class="w"> </span>chattr<span class="w"> </span>+i<span class="w"> </span>/etc/resolv.conf
+</code></pre></div>
+<p>The last line will make the file immutable, so that it cannot be overwritten by WSL.</p>
+<p>A second way (if the first does not work) is to edit the <code>/etc/systemd/resolved.conf</code> file. These SystemD files are used to initialize the linux environment. In the <code>resolved.conf</code> the default DNS servers are configured. You can then simply uncomment the line for the Google DNS.</p>
+<p>Note that the above will help you to resolve IP addresses for the global internet. If you want to resolve IP addresses for your local network, you will need to adjust your <code>/etc/hosts</code> file. This can for example be important when running applications in docker that use a specific IP address or expect the localhost to have a specific address. A typical configuration for the host file is:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># generateHosts = false</span>
 <span class="m">127</span>.0.0.1<span class="w">   </span>localhost.localdomain<span class="w"> </span>localhost
 <span class="m">127</span>.0.1.1<span class="w">   </span>&lt;computer_name&gt;
